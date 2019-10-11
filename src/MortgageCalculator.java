@@ -4,9 +4,6 @@ import java.util.Scanner;
 public class MortgageCalculator {
 
     public static void main(String[] args) {
-        int num = (int)Math.pow(2, 3);
-        System.out.println(num);
-
         Scanner scanner = new Scanner(System.in); //creating new scanner to get input from terminal
 
         //getting inputs
@@ -19,7 +16,10 @@ public class MortgageCalculator {
         System.out.print("Period (Years): ");
         double period = scanner.nextDouble();
 
-        double monthlyInterest = (interestRate/100)/12; //calculating monthly interest from interest rate
+        final int MONTHS_IN_YEAR = 12;
+        final int PERCENT = 100;
+
+        double monthlyInterest = (interestRate/PERCENT)/MONTHS_IN_YEAR; //calculating monthly interest from interest rate
 
         double totalPeriod = period * 12;
 
